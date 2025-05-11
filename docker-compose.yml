@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
     env_file:
-      - .env  # Add this line
+      - .env   # This tells Docker to load the environment variables from the .env file
     networks:
       - mynetwork
 
@@ -19,10 +19,10 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: chat
+      MYSQL_DATABASE: ${DB_NAME}
       MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_USER: sanga_user
-      MYSQL_PASSWORD: sanga_pass
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
