@@ -27,8 +27,8 @@ services:
       MYSQL_USER: sanga_user
       MYSQL_PASSWORD: sanga_pass
     volumes:
-        - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d  # Add this line to run SQL scripts
-        - db_data:/var/lib/mysql
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d  # Runs initialization scripts
+      - db_data:/var/lib/mysql
     networks:
       - mynetwork
 
@@ -38,3 +38,4 @@ volumes:
 networks:
   mynetwork:
     driver: bridge
+
