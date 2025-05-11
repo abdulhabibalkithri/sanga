@@ -1,9 +1,15 @@
 <?php
+// Debugging to check if environment variables are set
+echo 'DB_HOST: ' . getenv('DB_HOST') . '<br>';
+echo 'DB_USER: ' . getenv('DB_USER') . '<br>';
+echo 'DB_PASSWORD: ' . getenv('DB_PASSWORD') . '<br>';
+echo 'DB_NAME: ' . getenv('DB_NAME') . '<br>';
+
 // Confirming if environment variables are being set correctly
-$host = getenv('DB_HOST');  // Database host
-$user = getenv('DB_USER');  // Database username
-$password = getenv('DB_PASSWORD');  // Database password
-$database = getenv('DB_NAME');  // Database name
+$host = getenv('DB_HOST');
+$user = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_NAME');
 
 // Check if environment variables are null or empty
 if (!$host || !$user || !$password || !$database) {
@@ -20,3 +26,4 @@ if ($conn->connect_error) {
 
 echo "Connected successfully!";
 ?>
+
