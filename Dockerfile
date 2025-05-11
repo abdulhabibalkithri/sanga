@@ -12,8 +12,13 @@ COPY src/ /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html/
-# Set proper file permissions (optional but recommended)
+
+# Set proper file permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
-# Enable PHP error reporting (optional, for development)
+
+# Enable PHP error reporting
 RUN echo "display_errors=On\nerror_reporting=E_ALL" > /usr/local/etc/php/conf.d/docker-php-errors.ini
+
+# Expose port 80
+EXPOSE 80
