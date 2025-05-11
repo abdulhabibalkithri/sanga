@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - "8000:80"
+      - "${PORT:-10000}:80
     volumes:
       - ./src:/var/www/html
       - ./sanga/uploads:/var/www/html/uploads
