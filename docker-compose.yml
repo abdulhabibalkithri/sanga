@@ -8,7 +8,6 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./sanga/uploads:/var/www/html/uploads
-      - db_data:/var/lib/mysql
     depends_on:
       - db
     networks:
@@ -23,7 +22,7 @@ services:
       MYSQL_USER: sanga_user
       MYSQL_PASSWORD: sanga_pass
     volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
     networks:
       - mynetwork
 
