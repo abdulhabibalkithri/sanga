@@ -1,5 +1,5 @@
 <?php
-$host = 'db'; // container name from docker-compose
+$host = 'sanga-db-1'; // container name from docker-compose
 $user = 'sanga_user';
 $password = 'sanga_pass';
 $database = 'chat';
