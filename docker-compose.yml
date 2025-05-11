@@ -8,6 +8,7 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./sanga/uploads:/var/www/html/uploads
+      - db_data:/var/lib/mysql
     depends_on:
       - db
     networks:
