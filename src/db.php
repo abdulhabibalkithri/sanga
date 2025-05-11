@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; // container name from docker-compose
+$host = 'db'; // container name from docker-compose
 $user = 'sanga_user';
 $password = 'sanga_pass';
 $database = 'chat';
