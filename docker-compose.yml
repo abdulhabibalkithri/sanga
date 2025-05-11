@@ -4,14 +4,14 @@ services:
   web:
     build: .
     ports:
-      - "${PORT:-10000}:80
+      - "${PORT:-10000}:80"
     volumes:
       - ./src:/var/www/html
       - ./sanga/uploads:/var/www/html/uploads
     depends_on:
       - db
     env_file:
-      - .env   # This tells Docker to load the environment variables from the .env file
+      - .env
     networks:
       - mynetwork
 
