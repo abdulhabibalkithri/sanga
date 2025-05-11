@@ -1,0 +1,4 @@
+DB_HOST=db
+DB_USER=sanga_user
+DB_PASSWORD=sanga_pass
+DB_NAME=chat
