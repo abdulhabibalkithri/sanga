@@ -10,6 +10,11 @@ services:
       - ./sanga/uploads:/var/www/html/uploads
     depends_on:
       - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=sanga_user
+      - DB_PASSWORD=sanga_pass
+      - DB_NAME=chat
     networks:
       - mynetwork
 
@@ -31,3 +36,4 @@ volumes:
 
 networks:
   mynetwork:
+
