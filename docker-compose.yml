@@ -10,11 +10,8 @@ services:
       - ./sanga/uploads:/var/www/html/uploads
     depends_on:
       - db
-    environment:
-      - DB_HOST=db
-      - DB_USER=sanga_user
-      - DB_PASSWORD=sanga_pass
-      - DB_NAME=chat
+    env_file:
+      - .env  # Add this line
     networks:
       - mynetwork
 
@@ -27,7 +24,7 @@ services:
       MYSQL_USER: sanga_user
       MYSQL_PASSWORD: sanga_pass
     volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d  # Runs initialization scripts
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
     networks:
       - mynetwork
@@ -38,4 +35,3 @@ volumes:
 networks:
   mynetwork:
     driver: bridge
-
